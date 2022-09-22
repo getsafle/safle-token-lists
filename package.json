@@ -1,0 +1,19 @@
+{
+  "name": "safle-token-lists",
+  "version": "1.0.0",
+  "description": "This is a JS SDK catering to supported tokens list on safle swaps fetched from all the supported DEXs on different chains.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getsafle/safle-token-lists.git"
+  },
+  "author": "getsafle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getsafle/safle-token-lists/issues"
+  },
+  "homepage": "https://github.com/getsafle/safle-token-lists#readme"
+}
