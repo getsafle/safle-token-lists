@@ -1,6 +1,7 @@
 const config = require("./constants/index");
 const helper = require("./utils/helper");
 const quickswapSdk = require("quickswap-default-token-list");
+const coins = require("./constants/coins");
 
 async function getSupportedTokens(chain) {
   if (!config.supportedChains.includes(chain)) {
@@ -39,7 +40,6 @@ async function getSupportedTokens(chain) {
         (t) => t.address.toLowerCase() === value.address.toLowerCase()
       )
   );
-  console.log(tokens);
   return { tokens };
 }
 
@@ -78,6 +78,9 @@ async function getTokensPancakeswap(chain) {
   tokens.forEach(function (obj) {
     delete obj.chainId;
   });
+
+  tokens.push(coins[chain]);
+
   return { tokens };
 }
 
@@ -89,6 +92,8 @@ async function getTokensQuickswap(chain) {
   tokens.forEach(function (obj) {
     delete obj.chainId;
   });
+  tokens.push(coins[chain]);
+
   return { tokens };
 }
 
@@ -118,6 +123,8 @@ async function getTokensUniswap(chain) {
       delete obj.extensions;
     });
   }
+  tokens.push(coins[chain]);
+
   return { tokens };
 }
 
@@ -126,5 +133,5 @@ module.exports = {
   getTokensOneInch,
   getTokensPancakeswap,
   getTokensQuickswap,
-  getTokensUniswap
+  getTokensUniswap,
 };
