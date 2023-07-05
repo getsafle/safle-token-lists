@@ -1,6 +1,6 @@
 module.exports ={
     supportedChains : ['ethereum', 'polygon', 'bsc' ],
-    oneInchBaseURL : "https://safle.api.enterprise.1inch.exchange/v4.0",
+    oneInchBaseURL : "https://api-safle.1inch.io/v5.0",
     pancakeBaseURL: "https://tokens.pancakeswap.finance/pancakeswap-extended.json",
     uniswapBaseURL: "https://tokens.uniswap.org/",
     errorMessages:{

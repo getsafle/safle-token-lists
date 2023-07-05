@@ -1,6 +1,6 @@
 {
   "name": "@getsafle/safle-token-lists",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is a JS SDK catering to supported tokens list on safle swaps fetched from all the supported DEXs on different chains.",
   "main": "index.js",
   "scripts": {

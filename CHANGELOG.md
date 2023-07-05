@@ -5,3 +5,6 @@
 ### 1.0.1 (2022-09-28)
 
 - Added support for native coins
+### 1.0.2 (2022-07-05)
+
+- Updated 1Inch base URL
