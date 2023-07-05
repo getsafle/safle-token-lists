@@ -16,7 +16,6 @@ module.exports ={
           "https://tokens.1inch.io/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c_1.png",
       },
       "polygon":{
-        
             "symbol": "MATIC",
             "name": "MATIC",
             "decimals": 18,

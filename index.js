@@ -3,44 +3,30 @@ const helper = require("./utils/helper");
 const quickswapSdk = require("quickswap-default-token-list");
 const coins = require("./constants/coins");
 
-async function getSupportedTokens(chain) {
+async function getSupportedTokens(chain, dex) {
   if (!config.supportedChains.includes(chain)) {
     return { error: config.errorMessages.INVALID_CHAIN };
   }
-  const { tokens: oneInchTokens } = await getTokensOneInch(chain);
-
-  const { tokens: uniswapTokens } = await getTokensUniswap(chain);
-
-  const { tokens: quickswapTokens } = await getTokensQuickswap(chain);
-
-  const { tokens: pancakeswapTokens } = await getTokensPancakeswap(chain);
-
-  let tokens = [];
-
-  if (oneInchTokens) {
-    tokens.push(...oneInchTokens);
+  
+  if (dex === "oneInch") {
+    const { tokens } = await getTokensOneInch(chain);
+    return { tokens };
   }
 
-  if (uniswapTokens) {
-    tokens.push(...uniswapTokens);
+  if (dex === "uniswap") {
+    const { tokens } = await getTokensUniswap(chain);
+    return { tokens };
   }
 
-  if (quickswapTokens) {
-    tokens.push(...quickswapTokens);
+  if (dex === "quickswap") {
+    const { tokens } = await getTokensQuickswap(chain);
+    return { tokens };
   }
 
-  if (pancakeswapTokens) {
-    tokens.push(...pancakeswapTokens);
+  if (dex === "pancakeswap") {
+    const { tokens } = await getTokensPancakeswap(chain);
+    return { tokens };
   }
-
-  tokens = tokens.filter(
-    (value, index, self) =>
-      index ===
-      self.findIndex(
-        (t) => t.address.toLowerCase() === value.address.toLowerCase()
-      )
-  );
-  return { tokens };
 }
 
 async function getTokensOneInch(chain) {
