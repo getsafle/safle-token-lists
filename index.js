@@ -39,7 +39,7 @@ async function getTokensOneInch(chain) {
   } else {
     return { error: config.errorMessages.INVALID_CHAIN };
   }
-  const { response, error } = await helper.getRequest({ url: `${url}/tokens` });
+  const { response, error } = await helper.getRequest({ url: `${url}/tokens`, headers: {Authorization: `Bearer ${config.oneinchAuthToken}` }});
   if (error) {
     return error;
   }

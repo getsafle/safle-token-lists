@@ -13,5 +13,6 @@
 
 - Updated getSupportedTokens method to accept dex as a parameter and return tokens only for the selected dex
 
+### 1.0.4 (2023-10-26)
 
-
+- Updated 1Inch API URL and request handling
