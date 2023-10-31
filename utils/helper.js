@@ -1,15 +1,16 @@
-const axios = require('axios')
+const axios = require('axios');
+const {proxyServiceBaseURL} = require('../constants')
 
-const getRequest = async ({ url, headers }) => {
+const getRequest = async ({ url, token }) => {
     try {
+        const URL = `${proxyServiceBaseURL}?url=${url}&token=${token}&tokenType=Bearer`;
         const response = await axios({
-            url: `${url}`,
+            url: URL,
             method: 'GET',
-            headers
         });
         return { response: response.data };
     } catch (error) {
-        return { error: [{ name: 'server', message: `There is some issue, Please try after some time. ${error.message && error.message}`, data: error.response && error.response.data ? error.response.data : {} }] };
+        return{ error: error.response.data}
     }
 };
 

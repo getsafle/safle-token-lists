@@ -31,18 +31,18 @@ async function getSupportedTokens(chain, dex) {
 
 async function getTokensOneInch(chain) {
   if (chain === "ethereum") {
-    url = `${config.oneInchBaseURL}/1`;
+    url = `${config.oneInchBaseURL}/1/tokens`;
   } else if (chain === "polygon") {
-    url = `${config.oneInchBaseURL}/137`;
+    url = `${config.oneInchBaseURL}/137/tokens`;
   } else if (chain === "bsc") {
-    url = `${config.oneInchBaseURL}/56`;
+    url = `${config.oneInchBaseURL}/56/tokens`;
   } else {
     return { error: config.errorMessages.INVALID_CHAIN };
   }
-  const { response, error } = await helper.getRequest({ url: `${url}/tokens`, headers: {Authorization: `Bearer ${config.oneinchAuthToken}` }});
-  if (error) {
-    return error;
-  }
+  const { response, error } = await helper.getRequest({ url, token: config.oneinchAuthToken });
+  if (error)
+      return error
+
   let tokens = Object.values(response.tokens);
   tokens.forEach(function (obj) {
     delete obj.tags;
