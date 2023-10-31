@@ -7,5 +7,5 @@ module.exports ={
         INVALID_CHAIN: "Invalid chain selected"
     },
     oneinchAuthToken: 'I00gf2qW3ebQSNZrcLrfmZelxmLxqdyL',
-    proxyServiceBaseURL: 'https://stage-proxy.getsafle.com'
+    proxyServiceBaseURL: 'https://proxy.getsafle.com'
 }
