@@ -16,3 +16,7 @@
 ### 1.0.4 (2023-10-26)
 
 - Updated 1Inch API URL and request handling
+
+### 1.0.5 (2023-10-31)
+
+- Integrated Safle proxy service to call external API's
